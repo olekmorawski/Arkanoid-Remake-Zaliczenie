@@ -5,8 +5,7 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     public float speed = 3;
-    [SerializeField] float minX = 4.6f;
-    [SerializeField] float maxX = -4.6f;
+    [SerializeField] private Vector2 _bounds;
     private void Start()
     {
 
@@ -14,10 +13,33 @@ public class Platform : MonoBehaviour
 
     private void Update()
     {
-        var movement = Input.GetAxis("Horizontal");
-        var platformPos = transform.position;
-        platformPos += new Vector3(movement, 0, 0) * Time.deltaTime * speed;
-        platformPos.x = Mathf.Clamp(speed, minX, maxX);
-        transform.position = platformPos;
+        Debug.Log(Input.GetAxis("Horizontal"));
+        float direction = Input.GetAxis("Horizontal");
+        if (direction > 0f)
+        {
+            direction = 1f;
+        }
+        else if (direction < 0f)
+        {
+            direction = -1f;
+        }
+      //  else direction = 0f;
+        float movement = direction * speed * Time.deltaTime;
+        Vector3 position = transform.position;
+        if (transform.position.x + movement < _bounds.x)
+        {
+            position.x = _bounds.x;
+        }
+        else if (transform.position.x + movement > _bounds.y)
+        {
+            position.x = _bounds.y;
+        }
+        else
+        {
+            position.x += movement;
+        }
+
+        transform.position = position;
     }
+
 }
