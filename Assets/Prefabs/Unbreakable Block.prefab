@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7905652078387593360}
   - component: {fileID: 5710610708398694051}
   m_Layer: 0
-  m_Name: Brick
-  m_TagString: Untagged
+  m_Name: Unbreakable Block
+  m_TagString: Unbreakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 834e49639cb97bf4f9861bf250d7534d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5764706}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,4 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf14371a408c0a14cb4d73d88fc42462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockSparkles: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
   breakSound: {fileID: 8300000, guid: 749af844951fef54ca525e45c3a44276, type: 3}
