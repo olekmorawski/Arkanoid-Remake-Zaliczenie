@@ -13,7 +13,6 @@ public class Platform : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Input.GetAxis("Horizontal"));
         float direction = Input.GetAxis("Horizontal");
         if (direction > 0f)
         {
