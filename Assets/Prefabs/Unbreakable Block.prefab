@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 834e49639cb97bf4f9861bf250d7534d, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5764706}
   m_FlipX: 0
@@ -124,3 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSparkles: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
   breakSound: {fileID: 8300000, guid: 749af844951fef54ca525e45c3a44276, type: 3}
+  maxHits: 0
+  timesHit: 0
+  hitSprites: []
