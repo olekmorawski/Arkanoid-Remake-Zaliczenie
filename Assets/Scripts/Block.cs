@@ -55,10 +55,12 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
-        FindObjectOfType<GameStatus>().AddToScore();
+        //FindObjectOfType<GameStatus>().AddToScore();
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
-        Destroy(gameObject);
         TriggerParticles();
+        gameObject.transform.parent = null;
+        Level.instance.CheckBlocks();
+        Destroy(gameObject);
     }
     private void TriggerParticles()
     {

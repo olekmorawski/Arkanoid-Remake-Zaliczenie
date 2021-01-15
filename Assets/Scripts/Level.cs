@@ -1,22 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] int breakableBlocks;
-    public void CountBlocks()
-    {
-        breakableBlocks++;
-    }
+    public Transform blocksParrent;
+    public static Level instance;
+    public string levelname;
 
-    public void BlockDestroyed()
+
+
+
+    private void Awake()
     {
-        breakableBlocks--;
-       // if (breakableBlocks <= 0)
+        if (instance == null)
         {
-            //sceneloader.LoadNextScene();
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
         }
     }
+
+
+    public void CheckBlocks()
+    {
+        if (blocksParrent.childCount == 0)
+        {
+            SceneManager.LoadScene(levelname);
+        }
+    }
+
 
 }
